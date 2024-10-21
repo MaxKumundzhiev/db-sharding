@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  pgshard1:
+  pgshardA:
     image: pgshard:latest
-    container_name: pgshard1
+    container_name: pgshardA
     build:
       context: ./db
       dockerfile: Dockerfile
@@ -14,9 +14,9 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: postgres
 
-  pgshard2:
+  pgshardB:
     image: pgshard:latest
-    container_name: pgshard2
+    container_name: pgshardB
     build:
       context: ./db
       dockerfile: Dockerfile
@@ -27,9 +27,9 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: postgres
 
-  pgshard3:
+  pgshardC:
     image: pgshard:latest
-    container_name: pgshard3
+    container_name: pgshardC
     build:
       context: ./db
       dockerfile: Dockerfile
