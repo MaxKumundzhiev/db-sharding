@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from asyncpg import create_pool
 from contextlib import asynccontextmanager
 
-
 from routers.v1.urls.router import router as url_router
 from configurations import (
-    ShardAConfigurations, ShardBConfigurations, ShardCConfigurations
+    ShardAConfigurations, 
+    ShardBConfigurations, 
+    ShardCConfigurations
 )
 
 
