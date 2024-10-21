@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  pgshard1:
+    image: pgshard:latest
+    container_name: pgshard1
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+
+  pgshard2:
+    image: pgshard:latest
+    container_name: pgshard2
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+
+  pgshard3:
+    image: pgshard:latest
+    container_name: pgshard3
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
